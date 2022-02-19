@@ -1,11 +1,11 @@
-const puppeteer = require('puppeteer');
-var nodemailer = require("nodemailer");
-const ics = require('ics');
-const nodeCron = require("node-cron");
 
-const url = "https://www.haifa-stadium.com/schedule_of_matches_in_the_stadium/";
 
-async function run () {
+    
+    async function run () {
+
+    const puppeteer = require('puppeteer');
+    const url = "https://www.haifa-stadium.com/schedule_of_matches_in_the_stadium/";
+
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
@@ -24,8 +24,10 @@ async function run () {
         });
 
     let events = await prepareGamesToSending(games);
-    await sendScheduleToMail(events);
+    // await sendScheduleToMail(events);
     await browser.close();
+ return events;
+    
 }
 
 async function prepareGamesToSending(games){
@@ -63,40 +65,4 @@ async function prepareGamesToSending(games){
     return events;
 }
 
-async function sendScheduleToMail(events){
-    // Create a SMTP transporter object
-    var smtpTransport = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-        user: "absolutedentalny@gmail.com",
-        pass: "Dev@michael"
-    },
-    });
-
-    const { error, value } = ics.createEvents(
-    events
-    )
-
-    if (error) {
-    console.log(error)
-    return
-    }
-
-    const message = {
-        from: 'test@gmail.com',
-        to: 'mishaba1990@gmail.com',
-        subject: "Upcoming matches in Sammy Ofer",
-        text: 'Check the traffic before going home',
-        icalEvent: {
-        content: value,
-        method: 'publish'
-    }
-    };
-
-    smtpTransport.sendMail(message, (err, message) => {
-    console.log(err, message);
-    });
-
- }
- run();
-    // nodeCron.schedule("*/15 * * * * *", run);
+exports.run = run
