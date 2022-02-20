@@ -52,8 +52,8 @@ const app = express();
   });
   
   // routes
-  require("./routes/auth.routes")(app);
-  require("./routes/user.routes")(app);
+  // require("./routes/auth.routes")(app);
+  // require("./routes/user.routes")(app);
   
   // set port, listen for requests
   const port = process.env.PORT || 8080;
