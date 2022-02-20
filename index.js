@@ -3,32 +3,32 @@ const app = express();
 const cors = require("cors");
 // const dbConfig = require("./config/db.config");
 // const db = require("./models");
-// var dotenv = require('dotenv');
-// dotenv.config();
+var dotenv = require('dotenv');
+dotenv.config();
 
 
 // var corsOptions = {
 //     origin: "http://localhost:3000"
 //   };
   
-  // var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.comג']
-  // var corsOptions = {
-  //   origin: function (origin, callback) {
-  //     if (whitelist.indexOf(origin) !== -1) {
-  //       callback(null, true)
-  //     } else {
-  //       callback(new Error('Not allowed by CORS'))
-  //     }
-  //   }
-  // }
+  var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.comג']
+  var corsOptions = {
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    }
+  }
   
-  // app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
   
   // parse requests of content-type - application/json
-  // app.use(express.json());
+  app.use(express.json());
   
   // parse requests of content-type - application/x-www-form-urlencoded
-  // app.use(express.urlencoded({ extended: true }));
+  app.use(express.urlencoded({ extended: true }));
   
   console.log("test log");
   
