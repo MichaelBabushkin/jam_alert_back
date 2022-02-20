@@ -30,21 +30,21 @@ dotenv.config();
   // parse requests of content-type - application/x-www-form-urlencoded
   app.use(express.urlencoded({ extended: true }));
   
+  console.log("test log");
   
-  
-  db.mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("Successfully connect to MongoDB.");
-    // initial();
-  })
-  .catch(err => {
-    console.error("Connection error", err);
-    process.exit();
-  });
+  // db.mongoose
+  // .connect(process.env.DATABASE, {
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true
+  // })
+  // .then(() => {
+  //   console.log("Successfully connect to MongoDB.");
+  //   // initial();
+  // })
+  // .catch(err => {
+  //   console.error("Connection error", err);
+  //   process.exit();
+  // });
   
   // simple route
   app.get("/", (req, res) => {
