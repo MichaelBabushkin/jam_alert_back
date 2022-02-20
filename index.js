@@ -61,7 +61,7 @@ dotenv.config();
     console.log(`Server is running on port ${port}.`);
   });
   
-const Role = db.role;
+// const Role = db.role;
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
