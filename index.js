@@ -10,7 +10,7 @@ const app = express();
 //   origin: "http://localhost:3000"
 // };
 
-var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.com']
+var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.comג']
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
