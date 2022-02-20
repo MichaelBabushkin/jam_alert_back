@@ -7,9 +7,9 @@ var dotenv = require('dotenv');
 dotenv.config();
 
 
-// var corsOptions = {
-//     origin: "http://localhost:3000"
-//   };
+var corsOptions = {
+    origin: "http://localhost:3000"
+  };
   
   // var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.comג']
   // var corsOptions = {
@@ -22,7 +22,7 @@ dotenv.config();
   //   }
   // }
   
-  // app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
   
   // parse requests of content-type - application/json
   app.use(express.json());
