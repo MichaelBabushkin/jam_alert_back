@@ -22,29 +22,29 @@ dotenv.config();
     }
   }
   
-  // app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
   
   // parse requests of content-type - application/json
-  // app.use(express.json());
+  app.use(express.json());
   
   // parse requests of content-type - application/x-www-form-urlencoded
-  // app.use(express.urlencoded({ extended: true }));
+  app.use(express.urlencoded({ extended: true }));
   
   
   
-  // db.mongoose
-  // .connect(process.env.DATABASE, {
-  //   useNewUrlParser: true,
-  //   useUnifiedTopology: true
-  // })
-  // .then(() => {
-  //   console.log("Successfully connect to MongoDB.");
-  //   initial();
-  // })
-  // .catch(err => {
-  //   console.error("Connection error", err);
-  //   process.exit();
-  // });
+  db.mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log("Successfully connect to MongoDB.");
+    initial();
+  })
+  .catch(err => {
+    console.error("Connection error", err);
+    process.exit();
+  });
   
   // simple route
   app.get("/", (req, res) => {
