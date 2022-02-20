@@ -39,7 +39,7 @@ dotenv.config();
   })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
-    initial();
+    // initial();
   })
   .catch(err => {
     console.error("Connection error", err);
@@ -48,7 +48,7 @@ dotenv.config();
   
   // simple route
   app.get("/", (req, res) => {
-    res.json({ message: "Welcome to bezkoder application." });
+    res.json({ message: "Just an empty backend.. you have nothing to get here" });
   });
   
   // routes
@@ -61,7 +61,7 @@ dotenv.config();
     console.log(`Server is running on port ${port}.`);
   });
   
-// const Role = db.role;
+const Role = db.role;
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
