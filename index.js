@@ -1,11 +1,11 @@
 const express = require("express");
+const app = express();
 // const cors = require("cors");
 // const dbConfig = require("./config/db.config");
 // const db = require("./models");
 // var dotenv = require('dotenv');
 // dotenv.config();
 
-const app = express();
 
 // var corsOptions = {
   //   origin: "http://localhost:3000"
@@ -25,10 +25,10 @@ const app = express();
   // app.use(cors(corsOptions));
   
   // parse requests of content-type - application/json
-  app.use(express.json());
+  // app.use(express.json());
   
   // parse requests of content-type - application/x-www-form-urlencoded
-  app.use(express.urlencoded({ extended: true }));
+  // app.use(express.urlencoded({ extended: true }));
   
   
   
@@ -56,9 +56,9 @@ const app = express();
   require("./routes/user.routes")(app);
   
   // set port, listen for requests
-  const PORT = process.env.PORT || 8080;
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
+  const port = process.env.PORT || 8080;
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}.`);
   });
   
 // const Role = db.role;
