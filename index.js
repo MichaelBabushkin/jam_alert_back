@@ -8,10 +8,10 @@ dotenv.config();
 
 
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: "https://jam-alert.herokuapp.com"
   };
   
-  // var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.comג']
+  // var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.com']
   // var corsOptions = {
   //   origin: function (origin, callback) {
   //     if (whitelist.indexOf(origin) !== -1) {
