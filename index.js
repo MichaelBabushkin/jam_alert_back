@@ -11,17 +11,6 @@ var corsOptions = {
     origin: "https://jam-alert.herokuapp.com"
   };
   
-  // var whitelist = ['http://localhost:3000', 'https://jam-alert.herokuapp.com']
-  // var corsOptions = {
-  //   origin: function (origin, callback) {
-  //     if (whitelist.indexOf(origin) !== -1) {
-  //       callback(null, true)
-  //     } else {
-  //       callback(new Error('Not allowed by CORS'))
-  //     }
-  //   }
-  // }
-  
   app.use(cors(corsOptions));
   
   // parse requests of content-type - application/json
@@ -52,7 +41,7 @@ var corsOptions = {
   });
   
   // routes
-  // require("./routes/auth.routes")(app);
+  require("./routes/auth.routes")(app);
   // require("./routes/user.routes")(app);
   
   // set port, listen for requests
