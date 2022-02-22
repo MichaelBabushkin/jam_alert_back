@@ -41,7 +41,7 @@ var corsOptions = {
   });
   
   // routes
-  require("./routes/auth.routes")(app);
+  const authRoutes = require("./routes/auth.routes");
   // require("./routes/user.routes")(app);
   
   // set port, listen for requests
