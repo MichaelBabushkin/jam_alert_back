@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const dbConfig = require("./config/db.config");
 const db = require("./models");
+const path = require("path");
 var dotenv = require('dotenv');
 dotenv.config();
 
@@ -19,7 +20,6 @@ var corsOptions = {
   // parse requests of content-type - application/x-www-form-urlencoded
   app.use(express.urlencoded({ extended: true }));
   
-  console.log("test log");
   
   db.mongoose
   .connect(process.env.DATABASE, {
@@ -41,7 +41,9 @@ var corsOptions = {
   });
   
   // routes
-  const authRoutes = require("./routes/auth.routes");
+  // const authRoutes = require("./routes/auth.routes");
+  const authRoutes2 = require(path.join(__dirname, './routes/auth.routes'));
+  
   // require("./routes/user.routes")(app);
   
   // set port, listen for requests
