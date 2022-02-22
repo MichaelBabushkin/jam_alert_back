@@ -42,7 +42,7 @@ var corsOptions = {
   
   // routes
   // const authRoutes = require("./routes/auth.routes");
-  const authRoutes2 = require(path.join(__dirname, './routes/auth.routes'));
+  // const authRoutes2 = require(path.join(__dirname, './routes/auth.routes'));
   
   // require("./routes/user.routes")(app);
   
