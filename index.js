@@ -37,14 +37,14 @@ var corsOptions = {
   
   // simple route
   app.get("/", (req, res) => {
-    res.json({ message: "Just an empty backend.. you have nothing to get here3" });
+      res.json({ message: "Just an empty backend.. you have nothing to get here3" });
   });
   
   // routes
   // const authRoutes = require("./routes/auth.routes");
   // const authRoutes2 = require(path.join(__dirname, './routes/auth.routes'));
   require(path.join(__dirname, './routes/auth.routes'))(app);
-require(path.join(__dirname, './routes/user.routes'))(app);
+  require(path.join(__dirname, './routes/user.routes'))(app);
   // require("./routes/user.routes")(app);
   
   // set port, listen for requests
