@@ -37,7 +37,7 @@ var corsOptions = {
   
   // simple route
   app.get("/", (req, res) => {
-    res.json({ message: "Just an empty backend.. you have nothing to get here2" });
+    res.json({ message: "Just an empty backend.. you have nothing to get here3" });
   });
   
   // routes
