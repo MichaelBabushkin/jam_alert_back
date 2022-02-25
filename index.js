@@ -28,7 +28,7 @@ var corsOptions = {
   })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
-    // initial();
+    initial();
   })
   .catch(err => {
     console.error("Connection error", err);
@@ -41,11 +41,8 @@ var corsOptions = {
   });
   
   // routes
-  // const authRoutes = require("./routes/auth.routes");
-  // const authRoutes2 = require(path.join(__dirname, './routes/auth.routes'));
   require(path.join(__dirname, './routes/auth.routes'))(app);
   require(path.join(__dirname, './routes/user.routes'))(app);
-  // require("./routes/user.routes")(app);
   
   // set port, listen for requests
   const port = process.env.PORT || 8080;
