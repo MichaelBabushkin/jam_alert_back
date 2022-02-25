@@ -6,7 +6,10 @@
     const puppeteer = require('puppeteer');
     const url = "https://www.haifa-stadium.com/schedule_of_matches_in_the_stadium/";
     let events =  [];
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox','--disable-setuid-sandbox']
+      })
     const page = await browser.newPage();
     await page.goto(url);
 
