@@ -5,7 +5,7 @@
 
     const puppeteer = require('puppeteer');
     const url = "https://www.haifa-stadium.com/schedule_of_matches_in_the_stadium/";
-
+    let events =  [];
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
@@ -23,14 +23,14 @@
             return results;
         });
 
-    let events = await prepareGamesToSending(games);
+    events =  prepareGamesToSending(games);
     // await sendScheduleToMail(events);
     await browser.close();
  return events;
     
 }
 
-async function prepareGamesToSending(games){
+function prepareGamesToSending(games){
     let numOfGames = games.length/3;
     let gamesData = {};
     for (let i = 0; i < numOfGames; i++) {
