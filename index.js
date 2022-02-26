@@ -6,8 +6,7 @@ const db = require("./models");
 const path = require("path");
 var dotenv = require('dotenv');
 dotenv.config();
-
-
+//
 var corsOptions = {
     // origin: "http://localhost:3000"
     origin: "https://jam-alert.herokuapp.com"
