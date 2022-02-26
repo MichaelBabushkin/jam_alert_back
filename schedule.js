@@ -63,7 +63,7 @@ async function prepareGamesToSending(games){
     return events;
 }
 
-async function sendScheduleToMail(events){
+async function sendScheduleToMail(events) {
     // Create a SMTP transporter object
     var smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
@@ -85,6 +85,7 @@ async function sendScheduleToMail(events){
     const message = {
         from: 'test@gmail.com',
         to: 'mishaba1990@gmail.com',
+        // to: email,
         subject: "Upcoming matches in Sammy Ofer",
         text: 'Check the traffic before going home',
         icalEvent: {

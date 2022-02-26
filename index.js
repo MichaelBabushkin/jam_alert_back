@@ -9,6 +9,7 @@ dotenv.config();
 
 
 var corsOptions = {
+    // origin: "http://localhost:3000"
     origin: "https://jam-alert.herokuapp.com"
   };
   
